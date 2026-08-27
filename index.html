@@ -1,25 +1,123 @@
 <!DOCTYPE html>
+<!-- Declare the document language for accessibility tools and browsers. -->
 <html lang="en">
 <head>
+    <!-- Use UTF-8 so all text renders consistently. -->
     <meta charset="UTF-8">
+    <!-- Make the layout responsive on phones, tablets, and desktops. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <!-- Set the title shown in the browser tab. -->
+    <title>Habib | Web Development</title>
     <style>
-        /* Base Reset */
+        /* Define reusable colors, shadows, and sizing values. */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text: #172033;
+            --muted: #64748b;
+            --surface: #ffffff;
+            --background: #f1f5f9;
+            --radius: 18px;
+            --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+        }
+
+        /* Apply predictable sizing and remove default browser spacing. */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: system-ui, sans-serif; background: #f4f4f6; color: #333; line-height: 1.6; }
-          /* Typography & Spacing helpers */
-        header, nav, main, aside, footer, article { padding: 20px; border-radius: 8px; margin-bottom: 15px; }
-        nav { background: #3b82f6; display: flex; gap: 20px; justify-content: center; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; font-weight: lighter; }
+
+        /* Set the page font, colors, and soft background. */
+        body {
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #eff6ff, var(--background));
+            line-height: 1.6;
+        }
+
+        /* Keep the content centered and comfortably sized on large screens. */
+        .page-shell { width: min(100% - 32px, 1080px); margin: 0 auto; }
+
+        /* Style the header as a simple, professional brand area. */
+        header { padding: 56px 0 32px; text-align: center; }
+        .eyebrow { color: var(--primary); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+        h1 { margin-top: 8px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+        .intro { max-width: 620px; margin: 16px auto 0; color: var(--muted); font-size: 1.05rem; }
+
+        /* Create a clear navigation container with a subtle elevation. */
+        nav {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Make each destination feel like a distinct, easy-to-scan card. */
+        nav a {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-height: 150px;
+            justify-content: center;
+            padding: 24px;
+            color: var(--text);
+            text-decoration: none;
+            background: var(--surface);
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+
+        /* Highlight links clearly when users hover or navigate by keyboard. */
+        nav a:hover, nav a:focus-visible {
+            border-color: var(--primary);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.16);
+            transform: translateY(-4px);
+            outline: none;
+        }
+
+        /* Emphasize the link title and keep supporting text visually secondary. */
+        nav a strong { color: var(--primary-dark); font-size: 1.15rem; }
+        nav a span { color: var(--muted); font-size: 0.95rem; }
+
+        /* Provide a quiet footer to complete the page structure. */
+        footer { padding: 28px 0; color: var(--muted); text-align: center; font-size: 0.9rem; }
+
+        /* Stack navigation cards on narrow screens for comfortable touch targets. */
+        @media (max-width: 640px) {
+            header { padding-top: 36px; }
+            nav { grid-template-columns: 1fr; padding: 16px; }
+        }
     </style>
 </head>
 <body>
-    <!-- Main Navigation Bar -->
-    <nav>
-        <a href="./Practice-Week1->2/portfolio.html">Practice Week 1->2</a>
-        <a href="./Personal Website/index.html">Personal Website</a>    
-    </nav>
+    <!-- Wrap the page content to maintain a consistent reading width. -->
+    <div class="page-shell">
+        <!-- Introduce the site and explain the purpose of the navigation. -->
+        <header>
+            <p class="eyebrow">Web Development Portfolio</p>
+            <h1>Welcome to my work</h1>
+            <p class="intro">Explore my practice projects and personal website using the links below.</p>
+        </header>
+
+        <!-- Present the primary destinations as accessible navigation cards. -->
+        <nav aria-label="Main navigation">
+            <!-- Link to the introductory practice projects. -->
+            <a href="./Practice-Week1-%3E2/portfolio.html">
+                <strong>Practice Week 1–2</strong>
+                <span>View foundational web development exercises →</span>
+            </a>
+            <!-- Link to the personal website. -->
+            <a href="./Personal%20Website/index.html">
+                <strong>Personal Website</strong>
+                <span>Visit my personal profile and projects →</span>
+            </a>
+        </nav>
+
+        <!-- Close the page with a simple ownership statement. -->
+        <footer>Built with care and a focus on thoughtful web experiences.</footer>
+    </div>
 </body>
 </html>

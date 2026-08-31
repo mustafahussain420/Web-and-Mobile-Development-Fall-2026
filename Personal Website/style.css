@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
-    <!-- <style>
-        /* Base Reset */
+ /* Base Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: system-ui, sans-serif; background: #f4f4f6; color: #333; line-height: 1.6; }
 
@@ -45,50 +38,3 @@
                 flex-direction: column; /* Stacks sidebar under content on mobile */
             }
         }
-    </style> -->
-</head>
-<link rel="stylesheet" href="style.css">
-<body>
-    
-    <!-- Top Banner Section -->
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-
-    <!-- Main Navigation Bar -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="demos.html">Demos</a>
-        <a href="contact.html">Contact</a>    
-    </nav>
-
-    <!-- Layout Container (The generic div's best use case) -->
-    <div class="layout-wrapper">
-
-        <!-- Primary Page Content -->
-        <main>
-            <h2>Latest Happenings!</h2>
-            <p>Learning Web development with modern technologies!</p>
-
-            <article>
-                <h3>An Independent Article</h3>
-                <p>This sub-container holds an independent post or widget that makes sense on its own.</p>
-                <p>My garden is blooming with new flowers and fruits!</p>
-                <a href="#">Read More!</a>
-            </article>
-        </main>
-
-        <!-- Sidebar Section -->
-         <aside>
-            <h3>Sidebar</h3>
-            <p>Related links, Youtube videos links go here.</p>
-         </aside>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy;2026 Sayed Mustafa Hussain</p>
-    </footer>
-</body>
-</html>

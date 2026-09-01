@@ -1,6 +1,11 @@
- /* Base Reset */
+ @font-face {
+        font-family: 'Product Sans';
+        src: url('../Product Sans Regular.ttf') format('truetype');
+}
+
+/* Base Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: system-ui, sans-serif; background: #f4f4f6; color: #333; line-height: 1.6; }
+        body { font-family: 'Product Sans', system-ui, sans-serif; background: #f4f4f6; color: #333; line-height: 1.6; }
 
         /* Typography & Spacing helpers */
         header, nav, main, aside, footer, article { padding: 20px; border-radius: 8px; margin-bottom: 15px; }

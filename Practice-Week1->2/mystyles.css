@@ -1,4 +1,9 @@
-    body {background-color: greenyellow; font-family: 'Product Sans Regular';}
+    @font-face {
+    font-family: 'Product Sans';
+    src: url('../Product Sans Regular.ttf') format('truetype');
+}
+
+body {background-color: greenyellow; font-family: 'Product Sans', sans-serif;}
     h1 {color: blue;}
     h2 {color: green;}
     p {color: red;}

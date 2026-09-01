@@ -12,19 +12,23 @@
     <p>Save your name in the browser using <code>localStorage</code>.</p>
     <label for="name">Name:</label>
     <input id="name" type="text" placeholder="Enter your name">
+    <label for="age">Age:</label>
+    <input id="age" type="text" placeholder="Enter your age">
     <button id="saveButton" type="button">Save name</button>
     <button id="clearButton" type="button">Clear name</button>
     <p id="message"></p>
     <script>
         const nameInput = document.getElementById("name");
+        const ageInput = document.getElementById("age");
         const message = document.getElementById("message");
 
         function showSavedName() {
             const savedName = localStorage.getItem("studentName");
+            const savedAge = localStorage.getItem("studentAge");
 
             if (savedName) {
                 nameInput.value = savedName;
-                message.textContent = `Welcome back, ${savedName}!`;
+                message.textContent = `Welcome back, ${savedName}! Your age is ${savedAge}`;
             } else {
                 message.textContent = "No name has been saved yet.";
             }
@@ -32,9 +36,11 @@
 
         document.getElementById("saveButton").addEventListener("click", () => {
             const name = nameInput.value.trim();
+            const age = ageInput.value.trim();
 
             if (name) {
                 localStorage.setItem("studentName", name);
+                localStorage.setItem("studentAge", age);
                 showSavedName();
             } else {
                 message.textContent = "Please enter a name first.";
@@ -43,6 +49,7 @@
 
         document.getElementById("clearButton").addEventListener("click", () => {
             localStorage.removeItem("studentName");
+            localStorage.removeItem("studentAge");
             nameInput.value = "";
             message.textContent = "Saved name cleared";
         });

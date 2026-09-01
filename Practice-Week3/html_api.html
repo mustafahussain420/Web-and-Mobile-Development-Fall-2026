@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML API Example</title>
 </head>
+
 <body>
     <h1>Web Storage API</h1>
     <p>Save your name in the browser using <code>localStorage</code>.</p>
@@ -22,7 +24,7 @@
 
             if (savedName) {
                 nameInput.value = savedName;
-                message.textContent = 'Welcome back, ${savedName} !';
+                message.textContent = `Welcome back, ${savedName}!`;
             } else {
                 message.textContent = "No name has been saved yet.";
             }
@@ -48,4 +50,5 @@
         showSavedName();
     </script>
 </body>
+
 </html>

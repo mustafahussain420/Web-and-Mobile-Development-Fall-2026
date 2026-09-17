@@ -6,6 +6,9 @@ import './App.css'
 import { Car } from './models/car'
 
 function App() {
+
+  const myCar = new Car('Toyota', 'Corolla', 2024);
+
   return (
     <div>
       <h1>Hello World!</h1>

@@ -7,6 +7,15 @@ export class hybridCar extends Car {
         this.batterySize = batterySize;
     }
 
+    mileage(model) {
+        if (model === 'Prius') {
+            return 50; //km per litre
+        } else if (model === 'Volt') {
+            return 42; //km per litre
+        }
+        return 0; //km per litre for unknown models
+    }
+
     info() {
         return `${this.brand} ${this.model} (${this.year})`;
     }

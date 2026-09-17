@@ -17,6 +17,6 @@ export class hybridCar extends Car {
     }
 
     info() {
-        return `${this.brand} ${this.model} (${this.year})`;
+        return `${super.info} - ${this.fuelType}, Battery: ${this.batterySize}, Mileage: ${this.mileage(this.mileage)} km/L`;
     }
 }

@@ -1,25 +1,52 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-import { Car } from './models/car'
-import { hybridCar } from './models/hybridCar'
+import './App.css';
+import UserProfile from './component/UserProfile.jsx';
 
 function App() {
+    return (
+        <div className="app-layout">
+            <div className="column">
 
-  const myCar = new Car('Toyota', 'Corolla', 2024);
-  const myHybridCarPrius = new hybridCar('Toyota', 'Prius', 2024, 'Hybrid', '8 kWh')
-  const myHybridCarVolt = new hybridCar('Chevrolet', 'Volt', 2024, 'Hybrid', '18 kWh')
+                <h1>User Profiles</h1>
 
-  return (
-    <div>
-      <h1>Car Details</h1>
-      <p>{myCar.info()}</p>
-      <p>{myHybridCarPrius.info()}</p>
-      <p>{myHybridCarVolt.info()}</p>
-    </div>
-  );
+                <UserProfile
+                    name="Sarah Jenkins"
+                    role="Frontend Engineer"
+                    age={28}
+                    isOnline={true}
+                    bio="Passionate about building responsive web applications."
+                    socials={{
+                        github: '@sarahj',
+                        twitter: '@sarah_dev'
+                    }}
+                />
+
+                <UserProfile
+                    name="Alex Rivera"
+                    role="UI/UX Designer"
+                    age={32}
+                    isOnline={false}
+                    bio="Designing clean interfaces and user experiences."
+                    socials={{
+                        github: '@arivera',
+                        twitter: '@arivera_design'
+                    }}
+                />
+
+                <UserProfile
+                    name="Chen Wei"
+                    role="Backend Developer"
+                    age={25}
+                    isOnline={true}
+                    bio="Node.js and database performance fanatic."
+                    socials={{
+                        github: '@chenw',
+                        twitter: '@chen_codes'
+                    }}
+                />
+
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;

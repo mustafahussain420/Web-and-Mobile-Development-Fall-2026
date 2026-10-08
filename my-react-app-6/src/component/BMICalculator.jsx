@@ -33,36 +33,39 @@ function BMICalculator() {
 			<h1>BMI Calculator</h1>
 			<form onSubmit={calculateBMI}>
 				<p>
-					<label htmlFor="weight">Weight (kg): </label>
-					<input
-						id="weight"
-						type="number"
-						min="0"
-						step="any"
-						value={weight}
-						onChange={(event) => setWeight(event.target.value)}
-					/>
+					<label>
+						Weight (kg):
+						<input
+							type="number"
+							min="0"
+							step="any"
+							value={weight}
+							onChange={(event) => setWeight(event.target.value)}
+						/>
+					</label>
 				</p>
 
 				<p>
-					<label htmlFor="feet">Height (feet): </label>
-					<input
-						id="feet"
-						type="number"
-						min="0"
-						step="1"
-						value={feet}
-						onChange={(event) => setFeet(event.target.value)}
-					/>
-					<label htmlFor="inches"> Inches: </label>
-					<input
-						id="inches"
-						type="number"
-						min="0"
-						step="any"
-						value={inches}
-						onChange={(event) => setInches(event.target.value)}
-					/>
+					<label>
+						Height (feet):
+						<input
+							type="number"
+							min="0"
+							step="1"
+							value={feet}
+							onChange={(event) => setFeet(event.target.value)}
+						/>
+					</label>
+					<label>
+						Height (inches):
+						<input
+							type="number"
+							min="0"
+							step="any"
+							value={inches}
+							onChange={(event) => setInches(event.target.value)}
+						/>
+					</label>
 				</p>
 
 				<button type="submit">Calculate</button>{' '}

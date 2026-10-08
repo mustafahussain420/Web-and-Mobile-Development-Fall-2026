@@ -2,21 +2,22 @@ import { useState } from 'react'
 
 function BMICalculator() {
 	const [weight, setWeight] = useState('')
-	const [height, setHeight] = useState('')
+	const [feet, setFeet] = useState('')
+	const [inches, setInches] = useState('')
 	const [bmi, setBmi] = useState(null)
 
 	function calculateBMI(event) {
 		event.preventDefault()
 
 		const weightValue = Number(weight)
-		const heightValue = Number(height)
-		const heightInMeters = heightValue / 100
+		const heightInMeters = (Number(feet) * 12 + Number(inches)) * 0.0254
 		setBmi(weightValue / (heightInMeters * heightInMeters))
 	}
 
 	function resetForm() {
 		setWeight('')
-		setHeight('')
+		setFeet('')
+		setInches('')
 		setBmi(null)
 	}
 
@@ -44,14 +45,23 @@ function BMICalculator() {
 				</p>
 
 				<p>
-					<label htmlFor="height">Height (cm): </label>
+					<label htmlFor="feet">Height (feet): </label>
 					<input
-						id="height"
+						id="feet"
+						type="number"
+						min="0"
+						step="1"
+						value={feet}
+						onChange={(event) => setFeet(event.target.value)}
+					/>
+					<label htmlFor="inches"> Inches: </label>
+					<input
+						id="inches"
 						type="number"
 						min="0"
 						step="any"
-						value={height}
-						onChange={(event) => setHeight(event.target.value)}
+						value={inches}
+						onChange={(event) => setInches(event.target.value)}
 					/>
 				</p>
 
